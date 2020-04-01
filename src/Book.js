@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './envelop.png';
-import './Book.css';
+import React from "react";
+import logo from "./envelop.png";
+import "./Book.css";
 
 // function App() {
 //   return (
@@ -37,26 +37,23 @@ import './Book.css';
 //
 // export default Book;
 
-
 class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       pagesTotal: 1,
-      pageActive: 1,
+      pageActive: 1
     };
   }
 
   renderPage(i) {
-    return <Page value={i} path={logo}/>;
+    return <Page value={i} path={logo} />;
   }
 
   render() {
     return (
-      <div class="container">
-        {this.renderPage(this.state.pageActive)}
-      </div>
-    )
+      <div class="container">{this.renderPage(this.state.pageActive)}</div>
+    );
   }
 }
 
@@ -64,15 +61,15 @@ class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: null,
-      path: null,
+      value: props.value,
+      path: props.path
     };
   }
 
   render() {
     return (
       <div className="cover">
-        <img src = {this.state.path} />
+        <img src={this.state.path} />
       </div>
     );
   }
