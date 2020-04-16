@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./envelop.png";
 import "./Book.css";
 
 class Book extends React.Component {
