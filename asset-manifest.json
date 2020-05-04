@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.4b4b88f4.chunk.css",
-    "main.js": "/my-app/static/js/main.d4763d77.chunk.js",
-    "main.js.map": "/my-app/static/js/main.d4763d77.chunk.js.map",
-    "runtime-main.js": "/my-app/static/js/runtime-main.c5bf0358.js",
-    "runtime-main.js.map": "/my-app/static/js/runtime-main.c5bf0358.js.map",
-    "static/js/2.cd8cd12d.chunk.js": "/my-app/static/js/2.cd8cd12d.chunk.js",
-    "static/js/2.cd8cd12d.chunk.js.map": "/my-app/static/js/2.cd8cd12d.chunk.js.map",
-    "index.html": "/my-app/index.html",
-    "precache-manifest.15fd0485c25c2609da102ae0b08b8106.js": "/my-app/precache-manifest.15fd0485c25c2609da102ae0b08b8106.js",
-    "service-worker.js": "/my-app/service-worker.js",
-    "static/css/main.4b4b88f4.chunk.css.map": "/my-app/static/css/main.4b4b88f4.chunk.css.map",
-    "static/js/2.cd8cd12d.chunk.js.LICENSE.txt": "/my-app/static/js/2.cd8cd12d.chunk.js.LICENSE.txt",
-    "static/media/bsp1.png": "/my-app/static/media/bsp1.c8518bb3.png",
-    "static/media/envelop.png": "/my-app/static/media/envelop.33c6254b.png",
-    "static/media/left1.png": "/my-app/static/media/left1.040e0baf.png"
+    "main.css": "/book/static/css/main.4b4b88f4.chunk.css",
+    "main.js": "/book/static/js/main.d3ab4e77.chunk.js",
+    "main.js.map": "/book/static/js/main.d3ab4e77.chunk.js.map",
+    "runtime-main.js": "/book/static/js/runtime-main.86344647.js",
+    "runtime-main.js.map": "/book/static/js/runtime-main.86344647.js.map",
+    "static/js/2.5ac4bc87.chunk.js": "/book/static/js/2.5ac4bc87.chunk.js",
+    "static/js/2.5ac4bc87.chunk.js.map": "/book/static/js/2.5ac4bc87.chunk.js.map",
+    "index.html": "/book/index.html",
+    "precache-manifest.6efcbce381a6bc9b2132fef7c0be16f9.js": "/book/precache-manifest.6efcbce381a6bc9b2132fef7c0be16f9.js",
+    "service-worker.js": "/book/service-worker.js",
+    "static/css/main.4b4b88f4.chunk.css.map": "/book/static/css/main.4b4b88f4.chunk.css.map",
+    "static/js/2.5ac4bc87.chunk.js.LICENSE.txt": "/book/static/js/2.5ac4bc87.chunk.js.LICENSE.txt",
+    "static/media/bsp1.png": "/book/static/media/bsp1.c8518bb3.png",
+    "static/media/envelop.png": "/book/static/media/envelop.33c6254b.png",
+    "static/media/left1.png": "/book/static/media/left1.040e0baf.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c5bf0358.js",
-    "static/js/2.cd8cd12d.chunk.js",
+    "static/js/runtime-main.86344647.js",
+    "static/js/2.5ac4bc87.chunk.js",
     "static/css/main.4b4b88f4.chunk.css",
-    "static/js/main.d4763d77.chunk.js"
+    "static/js/main.d3ab4e77.chunk.js"
   ]
 }
