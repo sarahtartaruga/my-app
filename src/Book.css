@@ -59,38 +59,4 @@ body {
 }
 
 .Direction-button {
-  flex: 1;
 }
-
-.wrapper {
-  display: flex;
-  width: 600px;
-  height: 500px;
-  background-color: blue;
-  transition: margin .5s;
-  margin: 0 0 0 -250px;
-}
-
-.wrapper.is-open {
-  display: flex;
-  width: 600px;
-  height: 500px;
-  background-color: red;
-  margin-left: 0;
-}
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

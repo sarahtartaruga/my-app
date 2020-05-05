@@ -7,7 +7,6 @@ class Book extends React.Component {
     this.images = props.images;
     this.totalPages = props.images.length;
     this.selected = 0;
-    this.handleSelectedChange = this.handleSelectedChange.bind(this);
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
     this.imgRefs = [];
@@ -16,32 +15,26 @@ class Book extends React.Component {
     }
   }
 
-  handleSelectedChange(selected) {
-    this.selected = selected;
-  }
-
   previous() {
-
-    this.selected = this.selected - 1;
-    if (this.selected >= 0) {
+    if (this.selected > 0) {
+      this.selected = this.selected - 1;
       const img = this.imgRefs[this.selected].current;
       img.className = "Page-image Page-image--add";
     }
-
   }
 
   next() {
     if (this.selected < this.totalPages - 1 && this.selected >= 0) {
       const img = this.imgRefs[this.selected].current;
       img.className = "Page-image Page-image--remove";
+      this.selected = this.selected + 1;
     }
-    this.selected = this.selected + 1;
   }
 
   createPages() {
     let div = [];
     div.push(<div className={"Page"} key={"page"}></div>);
-    for (let i = 0; i < this.totalPages; i++) {
+    for (let i = 0; i <= this.totalPages; i++) {
       let divStyle = {
         zIndex: this.totalPages - i,
       };
@@ -57,43 +50,18 @@ class Book extends React.Component {
       );
     }
 
-    if (this.selected >= this.totalPages) {
-      let divStyle = {
-        zIndex: this.totalPages,
-      };
-      div.push(
-        <img
-          className={"Page-image Page-image-" + this.totalPages}
-          src={this.images[this.totalPages - 1]}
-          alt={"image-" + this.totalPages}
-          style={divStyle}
-          key={this.totalPages}
-        ></img>
-      );
-    }
     return div;
   }
 
   render() {
     return (
       <div className="Book">
-      <div className="Space">
-        {this.createPages()}
-        </div>
-        <div className="Space"
-        id="Button-area">
-          <button
-            className="Direction-button"
-            onClick={this.previous}
-
-          >
+        <div className="Space">{this.createPages()}</div>
+        <div className="Space" id="Button-area">
+          <button className="Direction-button" onClick={this.previous}>
             Previous
           </button>
-          <button
-            className="Direction-button"
-            onClick={this.next}
-            disabled={this.selected + 1 === this.totalPages}
-          >
+          <button className="Direction-button" onClick={this.next}>
             Next
           </button>
         </div>
