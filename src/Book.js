@@ -33,6 +33,7 @@ class Book extends React.Component {
     //   selected: state.selected + 1,
     // }));
     this.selected = this.selected + 1;
+    this.forceUpdate();
   }
 
   createPages() {
