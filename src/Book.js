@@ -1,5 +1,7 @@
 import React from "react";
 import "./Book.css";
+import leftButton from "./logos/left.png";
+import rightButton from "./logos/right.png";
 
 class Book extends React.Component {
   constructor(props) {
@@ -59,10 +61,10 @@ class Book extends React.Component {
         <div className="Space">{this.createPages()}</div>
         <div className="Space" id="Button-area">
           <button className="Direction-button" onClick={this.previous}>
-            Previous
+          <img className="Direction-image" src={leftButton}></img>
           </button>
           <button className="Direction-button" onClick={this.next}>
-            Next
+            <img className="Direction-image" src={rightButton}></img>
           </button>
         </div>
       </div>
