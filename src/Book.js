@@ -47,30 +47,11 @@ class Book extends React.Component {
     return pages;
   }
 
-  // renderPage() {„
-  //   return (
-  //     <Page
-  //       number={this.state.pageActive}
-  //       image={this.state.images[this.state.pageActive - 1]}
-  //     />
-  //   );
-  // }
-
-  // TODO: onClick: create new page with new image on click
-  // onClick(event) {
-  //   this.state.pageActive < this.state.pagesTotal &&
-  //     this.setState({ pageActive: this.state.pageActive + 1 });
-  // }
-
-  // render() {
-  //   return <div className="book">{this.renderPage(this.state.pageActive)}</div>;
-  // }
-
   render() {
     return (
-      <div className="App">
+      <div className="Book">
         <FlippingPages
-          className="App-pages"
+          className="Pages"
           direction="horizontal"
           selected={this.state.selected}
           onSelectedChange={this.handleSelectedChange}
@@ -90,24 +71,6 @@ class Book extends React.Component {
         >
           Next
         </button>
-      </div>
-    );
-  }
-}
-
-class Page extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      number: props.number,
-      image: props.image,
-    };
-  }
-
-  render() {
-    return (
-      <div className="page">
-        <img src={this.state.image} alt={this.state.number} />
       </div>
     );
   }

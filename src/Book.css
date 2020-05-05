@@ -12,47 +12,19 @@ body {
   background-color: pink;
 }
 
-/* .Book {
-  display: inline-flex;
-  width: 70%;
-  height: 70%;
+.Book {
+
 }
 
-.book {
-  width: 250px;
-  height: 400px;
-  background: blue;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  perspective: 1000px;
-}
 
-.page {
-  width: 250px;
-  height: 100%;
-  position: absolute;
-  left: 10px;
-  background-color: red;
-  transform: rotateY(-20deg);
-  transform-style: preserve-3d;
-  transform-origin: left;
-  transition: all .52 ease-in;
-}
-
-.book:hover .page{
-  transform: rotateY(-180deg);
-} */
-
-.App-pages {
-    height: 480px;
-    width: 480px;
-    perspective: 960px;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+.Pages {
+  height: 480px;
+  width: 480px;
+  perspective: 960px;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .Page {
