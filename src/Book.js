@@ -12,6 +12,7 @@ class Book extends React.Component {
     this.handleSelectedChange = this.handleSelectedChange.bind(this);
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
+    this.wrapperRef = React.createRef();
   }
 
   handleSelectedChange(selected) {
@@ -25,31 +26,53 @@ class Book extends React.Component {
   }
 
   next() {
+    const wrapper = this.wrapperRef.current;
+    wrapper.classList.toggle('is-open');
     this.setState((state) => ({
       selected: state.selected + 1,
     }));
   }
 
   createPages() {
-    let div = [];
-    div.push(<div className={"Page"}></div>);
-    for (let i = 0; i < this.totalPages; i++) {
-      div.push(
-        <img
-          className={"Page-image Page-image-" + i}
-          src={this.images[i]}
-          alt={"image-" + i}
-        ></img>
-      );
-    }
+      let div = [];
+      div.push(<div className={"Page"}></div>);
+      for (let i = this.state.selected; i < this.totalPages; i++) {
+        let divStyle = {
+          zIndex: this.totalPages - i,
+        };
+        div.push(
+          <img
+            className={"Page-image Page-image-" + i}
+            src={this.images[i]}
+            alt={"image-" + i}
+            style={divStyle}
+          ></img>
+        );
+      }
 
-    return div;
+      if (this.state.selected >= this.totalPages) {
+        let divStyle = {
+          zIndex: this.totalPages,
+        };
+        div.push(
+          <img
+            className={"Page-image Page-image-" + this.totalPages}
+            src={this.images[this.totalPages-1]}
+            alt={"image-" + this.totalPages}
+            style={divStyle}
+          ></img>
+        );
+      }
+      return div;
   }
 
   render() {
     return (
-      <div className="Book">
-        <div className="BookContainer">{this.createPages()}</div>
+      <div className="Book" onClick={this.next.bind(this)}>
+      <div ref={this.wrapperRef} className="wrapper">
+
+        {this.createPages()}
+      </div>
       </div>
     );
   }

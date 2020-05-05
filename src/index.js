@@ -13,7 +13,7 @@ import image5 from "./images/5.png";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Book images={[image1, image2, image3, image5, image4]}/>
+    <Book images={[image1, image2, image3, image4, image5]}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
