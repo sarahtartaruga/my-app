@@ -21,26 +21,27 @@ class Book extends React.Component {
   }
 
   previous() {
-    if (this.selected > 0) {
-      const img = this.imgRefs[this.selected + 1].current;
-      img.classList.toggle("Page-image--add");
-    }
+
     this.selected = this.selected - 1;
+    if (this.selected >= 0) {
+      const img = this.imgRefs[this.selected].current;
+      img.className = "Page-image Page-image--add";
+    }
+
   }
 
   next() {
-    if (this.selected < this.totalPages - 1) {
+    if (this.selected < this.totalPages - 1 && this.selected >= 0) {
       const img = this.imgRefs[this.selected].current;
-      img.classList.toggle("Page-image--remove");
+      img.className = "Page-image Page-image--remove";
     }
     this.selected = this.selected + 1;
-    //this.forceUpdate();
   }
 
   createPages() {
     let div = [];
-    div.push(<div className={"Page"}></div>);
-    for (let i = this.selected; i < this.totalPages; i++) {
+    div.push(<div className={"Page"} key={"page"}></div>);
+    for (let i = 0; i < this.totalPages; i++) {
       let divStyle = {
         zIndex: this.totalPages - i,
       };
@@ -51,6 +52,7 @@ class Book extends React.Component {
           src={this.images[i]}
           alt={"image-" + i}
           style={divStyle}
+          key={i}
         ></img>
       );
     }
@@ -65,6 +67,7 @@ class Book extends React.Component {
           src={this.images[this.totalPages - 1]}
           alt={"image-" + this.totalPages}
           style={divStyle}
+          key={this.totalPages}
         ></img>
       );
     }
@@ -73,7 +76,7 @@ class Book extends React.Component {
 
   render() {
     return (
-      <div className="Book" onClick={this.next.bind(this)}>
+      <div className="Book">
       <div className="Space">
         {this.createPages()}
         </div>
@@ -82,7 +85,7 @@ class Book extends React.Component {
           <button
             className="Direction-button"
             onClick={this.previous}
-            disabled={!this.selected}
+
           >
             Previous
           </button>

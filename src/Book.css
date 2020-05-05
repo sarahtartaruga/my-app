@@ -48,8 +48,8 @@ body {
 }
 
 .Page-image--add {
-  transform: translateX(100em);
-  transition-duration: 5s;
+  transform: translateX(0em);
+  transition-duration: 2s;
 }
 
 .Page {
