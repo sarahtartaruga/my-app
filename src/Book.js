@@ -1,7 +1,5 @@
 import React from "react";
 import "./Book.css";
-import FlippingPages from "flipping-pages";
-import "flipping-pages/FlippingPages.css";
 
 class Book extends React.Component {
   constructor(props) {
@@ -64,17 +62,7 @@ class Book extends React.Component {
     return (
       <div className="Book">
       <div className="BookContainer">
-        <FlippingPages
-          className="Pages"
-          direction="horizontal"
-          selected={this.state.selected}
-          onSelectedChange={this.handleSelectedChange}
-          /* touch-action attribute is required by pointer events
-                polyfill */
-          touch-action="none"
-        >
           {this.createPages()}
-        </FlippingPages>
         <div className="Space" id="ButtonSection">
         <button className="DirectionButton" onClick={this.previous} disabled={!this.state.selected}>
           Previous
