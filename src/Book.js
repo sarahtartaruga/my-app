@@ -21,6 +21,10 @@ class Book extends React.Component {
   }
 
   previous() {
+    if (this.selected > 0) {
+      const img = this.imgRefs[this.selected + 1].current;
+      img.classList.toggle("Page-image--add");
+    }
     this.selected = this.selected - 1;
   }
 
@@ -70,7 +74,26 @@ class Book extends React.Component {
   render() {
     return (
       <div className="Book" onClick={this.next.bind(this)}>
+      <div className="Space">
         {this.createPages()}
+        </div>
+        <div className="Space"
+        id="Button-area">
+          <button
+            className="Direction-button"
+            onClick={this.previous}
+            disabled={!this.selected}
+          >
+            Previous
+          </button>
+          <button
+            className="Direction-button"
+            onClick={this.next}
+            disabled={this.selected + 1 === this.totalPages}
+          >
+            Next
+          </button>
+        </div>
       </div>
     );
   }

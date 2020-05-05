@@ -14,13 +14,23 @@ body {
 
 .Book {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  margin: 2vh;
 }
 
 .Space {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Button-area {
   flex: 1;
+  padding: 10%;
+
+  padding-top: 50vh;
+  padding-bottom: 50vh;
 }
 
 .Page-image {
@@ -28,7 +38,7 @@ body {
   width: 45%;
   border: none;
   position: absolute;
-  top: 5vh;
+  top: 3vh;
   left: 25vw;
 }
 
@@ -37,10 +47,19 @@ body {
   transition-duration: 5s;
 }
 
+.Page-image--add {
+  transform: translateX(100em);
+  transition-duration: 5s;
+}
+
 .Page {
     position: relative;
     top: 0;
     left: 0;
+}
+
+.Direction-button {
+  flex: 1;
 }
 
 .wrapper {
