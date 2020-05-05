@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Book from './Book';
-import image1 from "./envelop.png";
-import image2 from "./bsp1.png";
-import image3 from "./left1.png";
+import image1 from "./images/1.png";
+import image2 from "./images/2.png";
+import image3 from "./images/3.png";
+import image4 from "./images/4.png";
+import image5 from "./images/5.png";
+
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Book images={[image1, image2, image3, image1]}/>
+    <Book images={[image1, image2, image3, image5, image4]}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

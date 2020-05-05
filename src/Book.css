@@ -13,13 +13,41 @@ body {
 }
 
 .Book {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh;
 }
 
+.BookContainer {
+  background-color: blue;
+  height: 96vh;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Space {
+  flex: 1;
+}
+
+#ButtonSection {
+  display: inline-flex;
+}
+
+.DirectionButton {
+  flex: 1;
+  padding: 20px;
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+}
 
 .Pages {
-  height: 480px;
-  width: 480px;
+  width: 100%;
+  height: auto;
+  flex: 9;
   perspective: 960px;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -27,21 +55,30 @@ body {
   user-select: none;
 }
 
+.Page-image {
+  width: 100%;
+  border: none;
+}
+
 .Page {
-    color: white;
-    height: 100%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain;
 }
 
 .Page-0 {
-  background: #f44336;
+  /* background: #f44336; */
 }
 
 .Page-1 {
-    background: #4caf50;
+    /* background: #4caf50; */
 }
 
 .Page-2 {
-  background: #2196f3;
+  /* background: #2196f3; */
 }
 
 

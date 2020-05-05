@@ -38,9 +38,22 @@ class Book extends React.Component {
     let pages = [];
 
     for (let i = 0; i < this.totalPages; i++) {
+      // default back page
+      let pageStyle = {
+        background: '#f44336',
+      };
+      // other pages: have following page as background
+      if (i < this.totalPages-1) {
+        pageStyle = {
+          backgroundImage: 'url(' + this.images[i+1] + ')',
+          backgroundRepeat: 'no-repeat',
+
+        };
+      };
+
       pages.push(
-        <div className={"Page Page-" + i} key={i}>
-          <img src={this.images[i]} alt={"image-" + i}></img>
+        <div className={"Page Page-" + i} style={pageStyle} key={i}>
+          <img className={"Page-image"} src={this.images[i]} alt={"image-" + i}></img>
         </div>
       );
     }
@@ -50,6 +63,7 @@ class Book extends React.Component {
   render() {
     return (
       <div className="Book">
+      <div className="BookContainer">
         <FlippingPages
           className="Pages"
           direction="horizontal"
@@ -61,16 +75,17 @@ class Book extends React.Component {
         >
           {this.createPages()}
         </FlippingPages>
-        {/* Buttons are required for keyboard navigation */}
-        <button onClick={this.previous} disabled={!this.state.selected}>
+        <div className="Space" id="ButtonSection">
+        <button className="DirectionButton" onClick={this.previous} disabled={!this.state.selected}>
           Previous
         </button>
-        <button
+        <button className="DirectionButton"
           onClick={this.next}
           disabled={this.state.selected + 1 === this.totalPages}
         >
           Next
-        </button>
+        </button></div>
+        </div>
       </div>
     );
   }
