@@ -6,37 +6,39 @@ class Book extends React.Component {
     super(props);
     this.images = props.images;
     this.totalPages = props.images.length;
-    this.state = {
-      selected: 0,
-    };
-    this.handleSelectedChange = this.handleSelectedChange.bind(this);
-    this.previous = this.previous.bind(this);
+    this.selected = 0;
+    // this.state = {
+    //   selected: 0,
+    // };
+    // this.handleSelectedChange = this.handleSelectedChange.bind(this);
+    // this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
     this.wrapperRef = React.createRef();
   }
 
-  handleSelectedChange(selected) {
-    this.setState({ selected });
-  }
-
-  previous() {
-    this.setState((state) => ({
-      selected: state.selected - 1,
-    }));
-  }
+  // handleSelectedChange(selected) {
+  //   this.setState({ selected });
+  // }
+  //
+  // previous() {
+  //   this.setState((state) => ({
+  //     selected: state.selected - 1,
+  //   }));
+  // }
 
   next() {
     const wrapper = this.wrapperRef.current;
     wrapper.classList.toggle('is-open');
-    this.setState((state) => ({
-      selected: state.selected + 1,
-    }));
+    // this.setState((state) => ({
+    //   selected: state.selected + 1,
+    // }));
+    this.selected = this.selected + 1;
   }
 
   createPages() {
       let div = [];
       div.push(<div className={"Page"}></div>);
-      for (let i = this.state.selected; i < this.totalPages; i++) {
+      for (let i = this.selected; i < this.totalPages; i++) {
         let divStyle = {
           zIndex: this.totalPages - i,
         };
@@ -50,7 +52,7 @@ class Book extends React.Component {
         );
       }
 
-      if (this.state.selected >= this.totalPages) {
+      if (this.selected >= this.totalPages) {
         let divStyle = {
           zIndex: this.totalPages,
         };
