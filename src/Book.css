@@ -12,7 +12,7 @@ body {
   background-color: pink;
 }
 
-.Book {
+/* .Book {
   display: inline-flex;
   width: 70%;
   height: 70%;
@@ -43,6 +43,33 @@ body {
 
 .book:hover .page{
   transform: rotateY(-180deg);
+} */
+
+.App-pages {
+    height: 480px;
+    width: 480px;
+    perspective: 960px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.Page {
+    color: white;
+    height: 100%;
+}
+
+.Page-0 {
+  background: #f44336;
+}
+
+.Page-1 {
+    background: #4caf50;
+}
+
+.Page-2 {
+  background: #2196f3;
 }
 
 

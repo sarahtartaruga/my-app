@@ -9,7 +9,7 @@ import image3 from "./left1.png";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Book images={[image1, image2, image3]}/>
+    <Book images={[image1, image2, image3, image1]}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
