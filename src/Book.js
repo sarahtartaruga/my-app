@@ -36,10 +36,11 @@ class Book extends React.Component {
   createPages() {
     let div = [];
     div.push(<div className={"Page"} key={"page"}></div>);
-    for (let i = 0; i <= this.totalPages; i++) {
+    for (let i = 0; i < this.totalPages; i++) {
       let divStyle = {
         zIndex: this.totalPages - i,
       };
+
       div.push(
         <img
           ref={this.imgRefs[i]}
