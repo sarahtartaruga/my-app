@@ -74,6 +74,10 @@ body {
   align-items: flex-end;
 }
 
+.Page-container--colour {
+  background-color: yellow;
+}
+
 .Direction-button {
   flex: 1;
   border: none;

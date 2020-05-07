@@ -3,17 +3,6 @@ import "./Book.css";
 import leftButton from "./logos/left.png";
 import rightButton from "./logos/right.png";
 
-function imagesLoaded(parentNode) {
-  const imgElements = [...parentNode.querySelectorAll("img")];
-    for (let i = 0; i < imgElements.length; i += 1) {
-      const img = imgElements[i];
-      if (!img.complete) {
-        return false;
-      }
-    }
-    return true;
-  }
-
 class Book extends React.Component {
   constructor(props) {
     super(props);
@@ -65,7 +54,6 @@ class Book extends React.Component {
     }
     return div;
   }
-
 
   render() {
     return (
