@@ -77,11 +77,10 @@ class Book extends React.Component {
 
   renderSpinner() {
   if (!this.state.loading) {
-    // Render nothing if not loading
     return null;
   }
   return (
-    <span className="spinner" />
+    <div className="Spinner">LOADING</div>
   );
 }
 
@@ -89,7 +88,8 @@ class Book extends React.Component {
     return (
       <div className="Book">
         <div className="View-container" ref={element => { this.galleryElement = element; }}>
-          <div className="Page-container">{this.renderSpinner()} {this.createPages()}</div>
+        {this.renderSpinner()}
+          <div className="Page-container">{this.createPages()}</div>
           <div className="Button-container">
             <button className="Direction-button" onClick={this.previous}>
               <img
