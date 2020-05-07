@@ -7,39 +7,46 @@ html,
 body {
   width: 100%;
   height: 100%;
-}
-
-body {
   background-color: pink;
 }
 
 .Book {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 100vh;
+  width: auto;
 }
 
-.Space {
-  flex: 6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.Loading-page {
+  background-color: red;
 }
 
-#Button-area {
+.View-container {
   flex: 1;
-  padding: 10%;
-  padding-top: 40vh;
-  padding-bottom: 60vh;
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+}
+
+.View-container--loading {
+  /* display: none; */
+  background-color: red;
+}
+
+.Button-container {
+  flex: 2;
+  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
+  background-color: green;
 }
 
 .Page-image {
   height: 95%;
   width: 45%;
+  padding-top: 1%;
   border: none;
   position: absolute;
-  top: 3vh;
-  left: 25vw;
 }
 
 .Page-image--remove {
@@ -57,37 +64,56 @@ body {
   top: 0;
   left: 0;
 }
+
+.Page-container {
+  top: 0;
+  left: 0;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .Direction-button {
+  flex: 1;
   border: none;
   outline: none;
   background: none;
-  padding: 10%;
 }
 
 .Direction-image {
-  width: 5vw;
-  height: 40%;
+  width: 20%;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 80%;
+}
+
+#Direction-image-left {
+  margin-top: 30%;
+}
+
+#Direction-image-right {
+  margin-bottom: 30%;
 }
 
 @media screen and (max-width: 1024px) {
   .Page-image {
-    height: 80vh;
-    width: 70vw;
-    border: none;
-    position: absolute;
-    top: 3vh;
-    left: 10vw;
+    height: 80%;
+    width: 70%;
   }
 
-  .Direction-button {
-    border: none;
-    outline: none;
-    background: none;
-    margin-left: 70%;
+  .Page-container {
+    flex: 3;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .Button-container {
+    flex: 1;
   }
 
   .Direction-image {
-    width: 7vw;
-    height: 40%;
+    width: 60%;
+    height: auto;
   }
 }

@@ -3,6 +3,17 @@ import "./Book.css";
 import leftButton from "./logos/left.png";
 import rightButton from "./logos/right.png";
 
+function imagesLoaded(parentNode) {
+  const imgElements = [...parentNode.querySelectorAll("img")];
+    for (let i = 0; i < imgElements.length; i += 1) {
+      const img = imgElements[i];
+      if (!img.complete) {
+        return false;
+      }
+    }
+    return true;
+  }
+
 class Book extends React.Component {
   constructor(props) {
     super(props);
@@ -52,21 +63,32 @@ class Book extends React.Component {
         ></img>
       );
     }
-
     return div;
   }
+
 
   render() {
     return (
       <div className="Book">
-        <div className="Space">{this.createPages()}</div>
-        <div className="Space" id="Button-area">
-          <button className="Direction-button" onClick={this.previous}>
-          <img className="Direction-image" src={leftButton}></img>
-          </button>
-          <button className="Direction-button" onClick={this.next}>
-            <img className="Direction-image" src={rightButton}></img>
-          </button>
+        <div className="View-container">
+          <div className="Page-container">{this.createPages()}</div>
+
+          <div className="Button-container">
+            <button className="Direction-button" onClick={this.previous}>
+              <img
+                className="Direction-image"
+                id="Direction-image-left"
+                src={leftButton}
+              ></img>
+            </button>
+            <button className="Direction-button" onClick={this.next}>
+              <img
+                className="Direction-image"
+                id="Direction-image-right"
+                src={rightButton}
+              ></img>
+            </button>
+          </div>
         </div>
       </div>
     );
