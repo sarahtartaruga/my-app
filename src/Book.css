@@ -17,25 +17,10 @@ body {
   width: auto;
 }
 
-.Loading-page {
-  background-color: red;
-}
-
 .View-container {
   flex: 1;
   display: flex;
   flex-direction: row;
-  background-color: blue;
-}
-
-.View-container--loading {
-  /* display: none; */
-  display: none;
-}
-
-.View-container--loaded {
-  /* display: none; */
-  display: flex;
 }
 
 .Button-container {
@@ -43,7 +28,6 @@ body {
   align-items: flex-start;
   flex-direction: column;
   display: flex;
-  background-color: green;
 }
 
 .Page-image {
@@ -85,10 +69,16 @@ body {
 
 .Spinner {
   background-color: yellow;
-  width: 100vw;
-  height: 100vh;
-  display: block;
+  display: flex;
+  flex-direction: column;
   z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.Loading-logo {
+  height: auto;
+  width: 60%;
 }
 
 .Direction-button {

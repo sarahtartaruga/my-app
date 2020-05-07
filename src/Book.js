@@ -2,6 +2,7 @@ import React from "react";
 import "./Book.css";
 import leftButton from "./logos/left.png";
 import rightButton from "./logos/right.png";
+import loadingLogo from "./logos/loading.png";
 
 function imagesLoaded(parentNode) {
   const imgElements = parentNode.querySelectorAll("img");
@@ -70,31 +71,43 @@ class Book extends React.Component {
   }
 
   handleStateChange = () => {
-  this.setState({
-    loading: !imagesLoaded(this.galleryElement),
-  });
-}
+    this.setState({
+      loading: !imagesLoaded(this.viewElement),
+    });
+  };
 
   renderSpinner() {
-  if (!this.state.loading) {
-    return null;
+    if (!this.state.loading) {
+      return null;
+    }
+    return (
+      <div className="Spinner">
+        <img
+          className="Loading-logo"
+          alt="loading-logo"
+          src={loadingLogo}
+        ></img>
+      </div>
+    );
   }
-  return (
-    <div className="Spinner">LOADING</div>
-  );
-}
 
   render() {
     return (
       <div className="Book">
-        <div className="View-container" ref={element => { this.galleryElement = element; }}>
         {this.renderSpinner()}
+        <div
+          className="View-container"
+          ref={(element) => {
+            this.viewElement = element;
+          }}
+        >
           <div className="Page-container">{this.createPages()}</div>
           <div className="Button-container">
             <button className="Direction-button" onClick={this.previous}>
               <img
                 className="Direction-image"
                 id="Direction-image-left"
+                alt="direction-left"
                 src={leftButton}
               ></img>
             </button>
@@ -102,6 +115,7 @@ class Book extends React.Component {
               <img
                 className="Direction-image"
                 id="Direction-image-right"
+                alt="direction-right"
                 src={rightButton}
               ></img>
             </button>
