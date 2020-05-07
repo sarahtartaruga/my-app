@@ -104,7 +104,6 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-
   .View-container {
     flex-direction: column;
     justify-content: center;
@@ -116,7 +115,7 @@ body {
   }
 
   .Page-container {
-    flex:5;
+    flex: 5;
     align-items: center;
     justify-content: center;
   }
@@ -126,7 +125,7 @@ body {
     flex-direction: row;
     display: flex;
     align-items: stretch;
-}
+  }
 
   .Direction-button {
     align-items: center;
@@ -141,5 +140,4 @@ body {
     margin-bottom: 0%;
     margin-right: 50%;
   }
-
 }
