@@ -104,23 +104,42 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+
+  .View-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .Page-image {
-    height: 80%;
-    width: 70%;
+    width: 80%;
+    height: 70%;
   }
 
   .Page-container {
-    flex: 3;
-    align-items: flex-end;
+    flex:5;
+    align-items: center;
     justify-content: center;
   }
 
   .Button-container {
     flex: 1;
+    flex-direction: row;
+    display: flex;
+    align-items: stretch;
+}
+
+  .Direction-button {
+    align-items: center;
   }
 
-  .Direction-image {
-    width: 60%;
-    height: auto;
+  #Direction-image-left {
+    margin-top: 0%;
+    margin-left: 50%;
   }
+
+  #Direction-image-right {
+    margin-bottom: 0%;
+    margin-right: 50%;
+  }
+
 }
