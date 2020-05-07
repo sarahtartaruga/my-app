@@ -78,6 +78,12 @@ body {
   background-color: yellow;
 }
 
+.spinner {
+  background-color: yellow;
+  width: 300px;
+  height: 300px;
+}
+
 .Direction-button {
   flex: 1;
   border: none;

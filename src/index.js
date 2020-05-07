@@ -9,10 +9,11 @@ import image4 from "./images/4.png";
 import image5 from "./images/5.png";
 import image6 from "./images/6.png";
 import imagetest from "./images/artscan1.png";
+import imagelake from "./images/lake3.jpg";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Book images={[imagetest, image1, image2, image6, image3, image4, image5]} />
+    <Book images={[image1, imagelake, imagetest, image2, image6, image3, image4, image5]} />
   </React.StrictMode>,
   document.getElementById("root")
 );

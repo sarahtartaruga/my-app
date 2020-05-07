@@ -3,9 +3,22 @@ import "./Book.css";
 import leftButton from "./logos/left.png";
 import rightButton from "./logos/right.png";
 
+function imagesLoaded(parentNode) {
+  const imgElements = parentNode.querySelectorAll("img");
+  for (const img of imgElements) {
+    if (!img.complete) {
+      return false;
+    }
+  }
+  return true;
+}
+
 class Book extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true,
+    };
     this.images = props.images;
     this.totalPages = props.images.length;
     this.selected = 0;
@@ -49,18 +62,34 @@ class Book extends React.Component {
           alt={"image-" + i}
           style={divStyle}
           key={i}
+          onLoad={this.handleStateChange}
         ></img>
       );
     }
     return div;
   }
 
+  handleStateChange = () => {
+  this.setState({
+    loading: !imagesLoaded(this.galleryElement),
+  });
+}
+
+  renderSpinner() {
+  if (!this.state.loading) {
+    // Render nothing if not loading
+    return null;
+  }
+  return (
+    <span className="spinner" />
+  );
+}
+
   render() {
     return (
       <div className="Book">
-        <div className="View-container">
-          <div className="Page-container">{this.createPages()}</div>
-
+        <div className="View-container" ref={element => { this.galleryElement = element; }}>
+          <div className="Page-container">{this.renderSpinner()} {this.createPages()}</div>
           <div className="Button-container">
             <button className="Direction-button" onClick={this.previous}>
               <img
